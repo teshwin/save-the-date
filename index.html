@@ -52,7 +52,8 @@ body{background:var(--grain),radial-gradient(ellipse at 50% 30%,#faf3ea,#eadfd0)
 .back-face a.dir:hover{background:#a4405a;color:#fff}
 .slot{position:relative;width:100%;height:34px;flex:none}
 .slot .hint,.slot .flip{position:absolute!important;left:50%;top:50%;transform:translate(-50%,-50%);margin:0!important;white-space:nowrap;display:block}
-.slot .flip{pointer-events:none}.done .slot .flip{pointer-events:auto}
+.slot .flip{pointer-events:none;visibility:hidden;animation:none;opacity:0}
+.done .slot .flip{pointer-events:auto;visibility:visible;animation:fadein 1.2s forwards,blink 2.4s 1.2s ease-in-out infinite}
 .card.ready{cursor:pointer}
 .inv{font-style:italic;font-size:calc(var(--cw)*.014 + 2px);letter-spacing:.08em;color:#8a6a5c;opacity:.55;margin-top:calc(var(--cw)*.006)}
 .front svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
