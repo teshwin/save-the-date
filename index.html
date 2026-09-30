@@ -48,24 +48,24 @@ body{background:var(--grain),radial-gradient(ellipse at 50% 30%,#faf3ea,#eadfd0)
 .face,.face *{backface-visibility:hidden;-webkit-backface-visibility:hidden}
 .front{transition:visibility 0s .55s}.back-face{visibility:hidden;transition:visibility 0s .55s}
 .flipped .front{visibility:hidden}.flipped .back-face{visibility:visible}
-.back-face a.dir{display:inline-flex;align-items:center;gap:.45em;margin-top:calc(var(--cw)*.008);padding:.35em 1em;border:1px solid #a4405a;border-radius:99px;color:#a4405a;font-size:calc(var(--cw)*.02 + 5px);letter-spacing:.16em;text-transform:uppercase;position:relative;z-index:3}
+.back-face a.dir{display:inline-flex;align-items:center;justify-content:center;width:1.8em;height:1.8em;margin-left:.6em;vertical-align:middle;border:1px solid #a4405a;border-radius:50%;color:#a4405a;font-size:calc(var(--cw)*.02 + 5px);border-bottom:1px solid #a4405a;position:relative;z-index:3}
 .back-face a.dir:hover{background:#a4405a;color:#fff}
 .card.ready{cursor:pointer}
-.inv{font-style:italic;font-size:calc(var(--cw)*.018 + 2px);letter-spacing:.08em;color:#8a6a5c;opacity:.6;margin-top:calc(var(--cw)*.012)}
+.inv{font-style:italic;font-size:calc(var(--cw)*.014 + 2px);letter-spacing:.08em;color:#8a6a5c;opacity:.55;margin-top:calc(var(--cw)*.006)}
 .front svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .names{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--script);font-size:calc(var(--cw)*.115);white-space:nowrap;z-index:2}
-.back-face{transform:rotateY(180deg);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:calc(var(--cw)*.012);padding:9% 6%}
+.back-face{transform:rotateY(180deg);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:calc(var(--cw)*.012);padding:8% 7%}
 .back-face::before{content:"";position:absolute;inset:4.5%;border:1px solid rgba(120,90,70,.45);outline:1px solid rgba(120,90,70,.25);outline-offset:4px}
-.back-face h2{font-family:var(--serif);font-weight:500;font-size:calc(var(--cw)*.055);letter-spacing:.06em;line-height:1.1}
-.lbl{font-size:calc(var(--cw)*.022 + 4px);letter-spacing:.3em;text-transform:uppercase;color:#8a6a5c;margin-top:calc(var(--cw)*.01)}
-.val{font-size:calc(var(--cw)*.038 + 3px);font-weight:500;line-height:1.15}
+.back-face h2{font-family:var(--serif);font-weight:500;font-size:calc(var(--cw)*.05);letter-spacing:.06em;line-height:1.1}
+.lbl{font-size:calc(var(--cw)*.018 + 3px);letter-spacing:.24em;text-transform:uppercase;color:#8a6a5c}
+.val{font-size:calc(var(--cw)*.032 + 2px);font-weight:500;line-height:1.15}
 .back-face a{color:var(--ink);text-decoration:none;border-bottom:1px dotted #8a6a5c}
 .back-face a:hover{color:#a4405a}
 
 .flip{position:static;background:none;border:0;padding:.4em 1em;cursor:pointer;opacity:0;display:none;font-size:calc(var(--cw)*.022 + 5px)!important;letter-spacing:.3em;color:#9a7f70}
 
 /* animation */
-.opening .env{cursor:default;pointer-events:none}
+.opening .env{cursor:default}
 .opening .hint,.opening .ptext{opacity:0;transition:opacity .5s}
 .opening .flap{animation:flap 4.4s forwards}
 .opening .pocket,.opening .back{animation:drop 4.4s forwards}
@@ -108,10 +108,9 @@ body{background:var(--grain),radial-gradient(ellipse at 50% 30%,#faf3ea,#eadfd0)
         <div class="face back-face">
           <h2 data-t="std">Save the Date</h2>
           <div class="lbl" data-t="loc">Location</div>
-          <div class="val"><a id="maps" target="_blank" rel="noopener" href="https://maps.app.goo.gl/Zt95wiL9jAzSizZQ8">Le Domaine des Marcoujans</a></div>
+          <div class="val"><a id="maps" target="_blank" rel="noopener" href="https://maps.app.goo.gl/Zt95wiL9jAzSizZQ8">Le Domaine des Marcoujans</a><a class="dir" id="dir" target="_blank" rel="noopener" href="https://maps.app.goo.gl/Zt95wiL9jAzSizZQ8" title="Get directions" aria-label="Get directions"><svg width=".95em" height=".95em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></a></div>
           <div class="lbl" data-t="town">Town</div>
           <div class="val">Saint-Élix-le-Château</div>
-          <a class="dir" id="dir" target="_blank" rel="noopener" href="https://maps.app.goo.gl/Zt95wiL9jAzSizZQ8"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span data-t="dir">Get directions</span></a>
           <div class="lbl" data-t="date">Date</div>
           <div class="val">15.04.2028</div>
           <div class="inv" data-t="inv">Invitation to follow</div>
@@ -139,7 +138,7 @@ function setLang(l){lang=l;document.documentElement.lang=l;
   document.querySelectorAll('[data-t]').forEach(e=>e.textContent=T[l][e.dataset.t]);
   document.querySelectorAll('.lang a').forEach(a=>a.classList.toggle('on',a.dataset.l===l));
   document.getElementById('flip').textContent=flipped?T[l].back:T[l].turn;
-  document.getElementById('env').setAttribute('aria-label',T[l].open);}
+  document.getElementById('env').setAttribute('aria-label',T[l].open);const d=document.getElementById('dir');d.title=T[l].dir;d.setAttribute('aria-label',T[l].dir);}
 document.querySelectorAll('.lang a').forEach(a=>a.onclick=e=>{e.preventDefault();history.replaceState(null,'','?lang='+a.dataset.l);setLang(a.dataset.l)});
 setLang(lang);
 
@@ -194,7 +193,7 @@ mute.onclick=()=>{muted=!muted;master.gain.value=muted?0:1;if(tune)tune.muted=mu
  for(let i=0;i<n;i++){const a=i/n*6.2832,r=41+3.2*Math.sin(a*3+ph[0])+2.2*Math.sin(a*5+ph[1])+1.2*Math.sin(a*9+ph[2]);p+=(i?'L':'M')+(Math.cos(a)*r).toFixed(1)+' '+(Math.sin(a)*r).toFixed(1)}
  p+='ZM28 0A28 28 0 1 0 -28 0A28 28 0 1 0 28 0Z';
  let b='';[0.6,2.1,3.5,5.0].forEach(a=>{const r=43+rnd(0,3);b+=`<circle cx="${(Math.cos(a)*r).toFixed(1)}" cy="${(Math.sin(a)*r).toFixed(1)}" r="${rnd(4,6.5).toFixed(1)}"/>`});
- document.getElementById('seal').innerHTML=`<defs><filter id="wx" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceAlpha" stdDeviation="1.7" result="b"/><feDiffuseLighting in="b" surfaceScale="6" diffuseConstant="1.15" lighting-color="#ffe7a0" result="d"><feDistantLight azimuth="235" elevation="52"/></feDiffuseLighting><feSpecularLighting in="b" surfaceScale="6" specularConstant=".75" specularExponent="20" lighting-color="#fff6d0" result="s"><feDistantLight azimuth="235" elevation="52"/></feSpecularLighting><feComponentTransfer in="SourceAlpha" result="t"><feFuncA type="discrete" tableValues="0 1"/></feComponentTransfer><feFlood flood-color="#c99f3f" result="f"/><feComposite in="f" in2="t" operator="in" result="g"/><feComposite in="g" in2="d" operator="arithmetic" k1="1.3" result="m"/><feComposite in="m" in2="s" operator="arithmetic" k2="1" k3=".55" result="o"/><feComposite in="o" in2="t" operator="in"/></filter></defs><g filter="url(#wx)"><path d="${p}" fill-rule="evenodd"/>${b}<circle r="28" fill-opacity=".55"/><circle r="21" fill="none" stroke="#000" stroke-width="1.5"/><text y="6" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-weight="600" font-size="18">T&amp;F</text></g>`})();
+ document.getElementById('seal').innerHTML=`<defs><filter id="wx" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceAlpha" stdDeviation="2.1" result="b"/><feDiffuseLighting in="b" surfaceScale="5" diffuseConstant="1.1" lighting-color="#f0d08a" result="d"><feDistantLight azimuth="235" elevation="52"/></feDiffuseLighting><feSpecularLighting in="b" surfaceScale="6" specularConstant=".18" specularExponent="8" lighting-color="#f5e2ab" result="s"><feDistantLight azimuth="235" elevation="52"/></feSpecularLighting><feComponentTransfer in="SourceAlpha" result="t"><feFuncA type="discrete" tableValues="0 1"/></feComponentTransfer><feFlood flood-color="#9a7228" result="f"/><feComposite in="f" in2="t" operator="in" result="g"/><feComposite in="g" in2="d" operator="arithmetic" k1="1.15" result="m"/><feComposite in="m" in2="s" operator="arithmetic" k2="1" k3=".35" result="o"/><feComposite in="o" in2="t" operator="in"/></filter></defs><g filter="url(#wx)"><path d="${p}" fill-rule="evenodd"/>${b}<circle r="28" fill-opacity=".55"/><circle r="21" fill="none" stroke="#000" stroke-width="1.5"/><text y="6" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-style="italic" font-weight="600" font-size="18">T&amp;F</text></g>`})();
 
 /* ---------- interaction ---------- */
 const stage=document.getElementById('stage'),env=document.getElementById('env'),card=document.getElementById('card'),flipBtn=document.getElementById('flip');
